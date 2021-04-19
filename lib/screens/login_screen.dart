@@ -25,26 +25,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  // Future logIn() async {
-  //   var res = await http.post("$SERVER_IP/auth", body: {
-  //     "username": _emailController.text,
-  //     "password": _passwordController.text
-  //   });
-  //   if (res.statusCode == 200) {
-  //     try {
-  //       var token = jsonDecode(res.body);
-  //       storage.write(key: 'jwtToken', value: token['token']);
-  //       Navigator.pushNamedAndRemoveUntil(
-  //           context, PagesScreen.id, (route) => false);
-  //     } catch (e) {
-  //       print(e);
-  //     }
-  //   } else {
-  //     showAlertDialog(context, "Пользователь не найден",
-  //         'Проверьте правильность введенных почты и пароля.');
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

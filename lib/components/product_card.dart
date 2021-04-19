@@ -17,6 +17,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize;
+    var theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -29,12 +30,10 @@ class ProductCard extends StatelessWidget {
         );
       },
       child: Padding(
-        padding: EdgeInsets.all(defaultSize * 1.6),
-        child: Container(
-          width: defaultSize * 14.5,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(30),
+        padding: EdgeInsets.all(defaultSize * 0.4),
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(defaultSize * 1.6),
           ),
           child: AspectRatio(
             aspectRatio: 0.693,
@@ -43,60 +42,58 @@ class ProductCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.all(defaultSize * 1.6),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Hero(
-                          tag: product.image,
-                          child: FadeInImage.assetNetwork(
-                            placeholder: 'assets/Spinner.gif',
-                            image: SERVER_URL + product.image,
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Hero(
-                            tag: product.url + product.state,
-                            child: Container(
-                              padding: EdgeInsets.only(
-                                  bottom: 4, top: 4, left: 8, right: 8),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.circular(defaultSize * 1.6),
-                                  color: Colors.redAccent),
-                              child: Text(
-                                product.state,
-                                style: TextStyle(
-                                  fontSize: defaultSize * 1.6,
-                                  color: Colors.white,
+                    padding: EdgeInsets.all(defaultSize),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(defaultSize * 1.6),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(defaultSize * 0.6),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            FadeInImage.assetNetwork(
+                              placeholder: 'assets/Spinner.gif',
+                              image: SERVER_URL + product.image,
+                            ),
+                            Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Container(
+                                padding: EdgeInsets.only(
+                                    bottom: 4, top: 4, left: 8, right: 8),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                        defaultSize * 1.6),
+                                    color: Colors.redAccent),
+                                child: Text(
+                                  product.state,
+                                  style: TextStyle(
+                                    fontSize: defaultSize * 1.6,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(defaultSize * 0.8),
-                  child: Hero(
-                    tag: product.url + product.title,
-                    child: TitleText(
-                      title: product.title,
-                      color: Colors.black,
-                    ),
+                  padding: EdgeInsets.only(
+                      left: defaultSize * 0.8, right: defaultSize * 0.8),
+                  child: Text(
+                    product.title,
+                    style: theme.textTheme.subtitle1,
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.all(defaultSize * 0.5),
-                  child: Hero(
-                    tag: product.url + product.price.toString(),
-                    child: Text(
-                      '${product.price.toString()} грн',
-                      style: TextStyle(color: Colors.black),
-                    ),
+                  child: Text(
+                    '${product.price.toString()} грн',
+                    style: theme.textTheme.subtitle2,
                   ),
                 ),
               ],

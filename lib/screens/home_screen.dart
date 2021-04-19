@@ -1,7 +1,9 @@
+import 'package:appstore/components/cart_button.dart';
 import 'package:appstore/components/categories.dart';
 import 'package:appstore/components/favorites_button.dart';
 import 'package:appstore/components/products_widget.dart';
 import 'package:appstore/components/title_text.dart';
+import 'package:appstore/constants.dart';
 import 'package:appstore/services/api_data.dart';
 import 'package:appstore/size_config.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('AppStore'),
         actions: [
           FavoritesButton(),
+          CartButton(),
         ],
       ),
       body: SingleChildScrollView(

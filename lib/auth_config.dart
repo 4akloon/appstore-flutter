@@ -1,6 +1,6 @@
 import 'package:appstore/constants.dart';
 
-import 'models/user_model.dart';
+import 'models/user.dart';
 
 class AuthConfig {
   static String token;

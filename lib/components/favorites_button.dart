@@ -9,6 +9,7 @@ class FavoritesButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return TextButton.icon(
       onPressed: () {
         Navigator.push(
@@ -30,7 +31,8 @@ class FavoritesButton extends StatelessWidget {
         },
       ),
       style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+        foregroundColor:
+            MaterialStateProperty.all<Color>(theme.textTheme.title.color),
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:appstore/auth_config.dart';
+import 'package:appstore/constants.dart';
 import 'package:appstore/screens/pages.dart';
 import 'package:appstore/services/api_data.dart';
 import 'package:flutter/material.dart';

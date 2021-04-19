@@ -2,7 +2,7 @@ import 'package:appstore/auth_config.dart';
 import 'package:appstore/components/cart_button.dart';
 import 'package:appstore/components/favorites_button.dart';
 import 'package:appstore/components/orders_button.dart';
-import 'package:appstore/models/user_model.dart';
+import 'package:appstore/models/user.dart';
 import 'package:appstore/screens/login_screen.dart';
 import 'package:appstore/services/api_data.dart';
 import 'package:flutter/material.dart';
